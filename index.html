@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Daily Counting Web App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      text-align: center;
+      padding-top: 100px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    #message {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Daily Counting</h1>
+  <button onclick="startCounting()">Start Daily Counting</button>
+  <div id="message"></div>
+
+  <script>
+    function startCounting() {
+      fetch("https://script.google.com/macros/s/AKfycbyZwQrxxXeDnT1llTZb3h7Mj059z4y_3JuKnmQ2p5yIdQXbxttoDblg4coapbSy-gkq/exec")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('message').innerText = "Success: " + data;
+        })
+        .catch(error => {
+          document.getElementById('message').innerText = "Error: " + error;
+        });
+    }
+  </script>
+
+</body>
+</html>
