@@ -1,50 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Open Web App</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RMC</title>
   <style>
     body {
       font-family: Arial, sans-serif;
+      background: #f2f2f2;
       text-align: center;
       padding-top: 100px;
-      background-color: #f4f4f4;
     }
 
-    button {
-      padding: 15px 30px;
-      font-size: 18px;
-      background-color: #007bff;
+    h1 {
+      color: #333;
+      font-size: 40px;
+      margin-bottom: 60px;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 20px;
+      padding: 20px 40px;
+      font-size: 20px;
+      background-color: #007BFF;
       color: white;
       border: none;
       border-radius: 10px;
       cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s;
     }
 
-    button:hover {
+    .button:hover {
       background-color: #0056b3;
     }
   </style>
 </head>
 <body>
 
-  <h1>Daily Counting</h1>
-  <button onclick="openWebApp()">Start Web Application</button>
+  <h1>RMC</h1>
 
-  <script>
-    function openWebApp() {
-      const url = "https://script.google.com/macros/s/AKfycbyZwQrxxXeDnT1llTZb3h7Mj059z4y_3JuKnmQ2p5yIdQXbxttoDblg4coapbSy-gkq/exec";
-      const width = 500;
-      const height = 600;
-      const left = (screen.width / 2) - (width / 2);
-      const top = (screen.height / 2) - (height / 2);
-      window.open(
-        url,
-        "DailyCountingWebApp",
-        `width=${width},height=${height},top=${top},left=${left},resizable=yes,scrollbars=yes`
-      );
-    }
-  </script>
+  <a class="button" href="https://mrasiya.github.io/counttest/" target="_blank">START DAILY COUNT</a>
+  <a class="button" href="https://rmc.timelabs.in/" target="_blank">TIME LAB</a>
 
 </body>
 </html>
