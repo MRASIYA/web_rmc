@@ -2,23 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RMC Chemicals</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Daily Counting Web App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      text-align: center;
+      padding-top: 100px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    #message {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>RMC Chemicals</h1>
-    
-    <div class="button-group">
-      <a href="https://rmc.timelabs.in/" class="button">TIME LAB</a>
-      <a href="https://script.google.com/macros/s/AKfycbyZwQrxxXeDnT1llTZb3h7Mj059z4y_3JuKnmQ2p5yIdQXbxttoDblg4coapbSy-gkq/exec" class="button">DAILY COUNTING</a>
-       <a href="https://mrasiya.github.io/app01" class="button">Test DAILY COUNTINGm</a>
-    </div>
 
-    <div class="description">
-      <p>
-        We earn customers’ enthusiasm through continuous improvement driven by the integrity, teamwork and innovation.
-        This quest for excellence is based upon principles, continuous process improvements and developing a skilled workforce
-        of the highest calibre driven by an urge to achieve excellent quality and increase productivity by eliminating losses.
-        To support this quest, each function employs metrics to define, and implements processes for RMC
+  <h1>Daily Counting</h1>
+  <button onclick="startCounting()">Start Daily Counting</button>
+  <div id="message"></div>
+
+  <script>
+    function startCounting() {
+      fetch("https://script.google.com/macros/s/AKfycbyZwQrxxXeDnT1llTZb3h7Mj059z4y_3JuKnmQ2p5yIdQXbxttoDblg4coapbSy-gkq/exec")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('message').innerText = "Success: " + data;
+        })
+        .catch(error => {
+          document.getElementById('message').innerText = "Error: " + error;
+        });
+    }
+  </script>
+
+</body>
+</html>
